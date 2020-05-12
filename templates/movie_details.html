@@ -19,13 +19,13 @@
           
          <div class="float-sm-left" > <img src="{{my_movie.full_cover_url}}" class="rounded-lg" alt="..." style="margin: 10px; " width="200px" height="300px"></div>
 
-         <div style="padding: 5px;  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; mix-blend-mode: difference;">
+         <div style="padding: 5px;  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; mix-blend-mode: difference; margin-bottom: 0em;">
             
             <p class="h1" style="font:bold;"><strong>{{my_movie.title}}</strong></p>
 
             <p class="rating" style="font:bold;"><strong>IMDB Rating : {{my_movie.rating}}</strong></p>
 
-         <ul class="list-inline"><strong><li class="list-inline-item">Genre:</li></strong> 
+         <ul class="list-inline"><strong><li class="list-inline-item">Genre : </li></strong> 
             {% for genre in my_movie.genre %}
                <li class="list-inline-item">
                   <span class="border border-dark">{{genre}}</span>
@@ -33,7 +33,7 @@
             {% endfor %}
          </ul>
 
-         <ul class="list-inline"><strong><li class="list-inline-item">Director</li></strong> 
+         <ul class="list-inline"><strong><li class="list-inline-item">Director : </li></strong> 
             {% for director in my_movie.directors %}
             <li class="list-inline-item">
                <span class="border border-dark">{{director}}</span> 
