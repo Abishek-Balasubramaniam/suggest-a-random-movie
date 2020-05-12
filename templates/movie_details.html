@@ -13,13 +13,13 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
-    <div class="card text-dark">
+    <div class="card text-dark" >
       <img src="{{my_movie.cover_url}}" class="card-img" alt="..." style="filter:blur(50px);">
       <div class="card-img-overlay">
           
          <div class="float-sm-left" > <img src="{{my_movie.full_cover_url}}" class="rounded-lg" alt="..." style="margin: 10px; " width="200px" height="300px"></div>
 
-         <div style="padding: 5px;  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; mix-blend-mode: difference; margin-bottom: 0em;">
+         <div style="padding: 5px; mix-blend-mode: difference;">
             
             <p class="h1" style="font:bold;"><strong>{{my_movie.title}}</strong></p>
 
@@ -43,13 +43,13 @@
      
          <p><strong>Synopsis: {{my_movie.plot}}<strong></p>
 
+         </div>
+         <div class="float-sm-left" style="margin: 5px;">
+         <form action="" method="GET" class="main_form">
+         <button type="submit" class="btn btn-dark">click to get a random movie</button>
+         </form>
+         </div>
       </div>
-     <div class="float-sm-left" style="margin: 5px;">
-     <form action="" method="GET" class="main_form">
-        <button type="submit" class="btn btn-dark">click to get a random movie</button>
-     </form>
-     </div>
-     </div>
-    </div>
+   </div>
 </body>
 </html>
