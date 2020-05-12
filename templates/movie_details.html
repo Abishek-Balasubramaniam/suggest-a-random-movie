@@ -7,41 +7,50 @@
     <title>Random movie</title>
 
 </head>
-<body class="wrapper" style="margin:5px; background-color: lightgrey;backdrop-filter: blur(8px);">
+<body class="wrapper">
     
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     
-   <div>      
-    <div class="float-sm-left"> <img src="{{my_movie.cover_url}}" class="rounded" alt="..." style="margin: 10px; " width="130px"></div>
+    <div class="card text-dark">
+      <img src="{{my_movie.cover_url}}" class="card-img" alt="..." style="filter:blur(50px);">
+      <div class="card-img-overlay">
+          
+         <div class="float-sm-left" > <img src="{{my_movie.full_cover_url}}" class="rounded-lg" alt="..." style="margin: 10px; " width="200px" height="300px"></div>
 
-    <p class="h2">{{my_movie.title}}</p>
+         <div style="padding: 10px;  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; mix-blend-mode: difference;">
+            
+            <p class="h1" style="font:bold;"><strong>{{my_movie.title}}</strong></p>
 
-    <p class="rating">IMDB Rating : {{my_movie.rating}}</p>
+            <p class="rating" style="font:bold;"><strong>IMDB Rating> : {{my_movie.rating}}</strong></p>
 
-     <ul class="list-inline">Genre : 
-        {% for genre in my_movie.genre %}
-        <li class="list-inline-item">
-           <mark>{{genre}}</mark> 
-        </li>
-        {% endfor %}
-     </ul>
+         <ul class="list-inline"><strong><li class="list-inline-item">Genre:</li></strong> 
+            {% for genre in my_movie.genre %}
+               <li class="list-inline-item">
+                  <span class="border border-dark">{{genre}}</span>
+               </li>
+            {% endfor %}
+         </ul>
 
-     <ul class="list-inline">Director : 
-        {% for director in my_movie.directors %}
-        <li class="list-inline-item">
-           <mark> {{director}}</mark> 
-        </li>
-        {% endfor %}
-     </ul>
-     <p><b>Synopsis : </b>{{my_movie.plot}}</p>
-   </div>
+         <ul class="list-inline"><strong><li class="list-inline-item">Director</li></strong> 
+            {% for director in my_movie.directors %}
+            <li class="list-inline-item">
+               <span class="border border-dark">{{director}}</span> 
+            </li>
+            {% endfor %}
+         </ul>
+     
+         <p><strong>Synopsis: {{my_movie.plot}}<strong></p>
+
+      </div>
       <br>
      <div class="float-sm-left" style="margin-left: 10px; margin-top: 5px;">
      <form action="" method="GET" class="main_form">
         <button type="submit" class="btn btn-dark">click to get a random movie</button>
      </form>
      </div>
+     </div>
+    </div>
 </body>
 </html>
