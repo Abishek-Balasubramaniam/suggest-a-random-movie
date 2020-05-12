@@ -17,15 +17,15 @@
       <img src="{{my_movie.cover_url}}" class="card-img" alt="..." style="filter:blur(50px);">
       <div class="card-img-overlay">
           
-         <div class="float-sm-left" > <img src="{{my_movie.full_cover_url}}" class="rounded-lg" alt="..."   width="200px" height="300px"></div>
+         <div class="float-sm-left" > <img src="{{my_movie.full_cover_url}}" class="rounded-lg" alt="..."   width="200px" height="300px" style="margin:15px"></div>
 
-         <div style="padding: 5px; mix-blend-mode: difference;">
+         <div style="margin:10px ">
             
-            <p class="h1" style="font:bold;"><strong>{{my_movie.title}}</strong></p>
+            <p class="h1" style="font:bold;mix-blend-mode: difference;"><strong>{{my_movie.title}}</strong></p>
 
-            <p class="rating" style="font:bold;"><strong>IMDB Rating : {{my_movie.rating}}</strong></p>
+            <p class="rating" style="font:bold;mix-blend-mode: difference;"><strong>IMDB Rating : {{my_movie.rating}}</strong></p>
 
-         <ul class="list-inline"><strong><li class="list-inline-item">Genre : </li></strong> 
+         <ul class="list-inline" style="mix-blend-mode: difference;"><strong><li class="list-inline-item">Genre : </li></strong> 
             {% for genre in my_movie.genre %}
                <li class="list-inline-item">
                   <span class="border border-dark">{{genre}}</span>
@@ -33,7 +33,7 @@
             {% endfor %}
          </ul>
 
-         <ul class="list-inline"><strong><li class="list-inline-item">Director : </li></strong> 
+         <ul class="list-inline" style="mix-blend-mode: difference;"><strong><li class="list-inline-item">Director : </li></strong> 
             {% for director in my_movie.directors %}
             <li class="list-inline-item">
                <span class="border border-dark">{{director}}</span> 
@@ -41,14 +41,14 @@
             {% endfor %}
          </ul>
      
-         <p><strong>Synopsis: {{my_movie.plot}}<strong></p>
-
-         </div>
-         <div class="float-sm-left" style="margin: 5px;">
+         <p style="mix-blend-mode: difference; max-width: 1200px;"><strong>Synopsis: {{my_movie.plot}}<strong></p>
+         <div class="float-sm-left">
          <form action="" method="GET" class="main_form">
          <button type="submit" class="btn btn-dark">click to get a random movie</button>
          </form>
          </div>
+         </div>
+         
       </div>
    </div>
 </body>
