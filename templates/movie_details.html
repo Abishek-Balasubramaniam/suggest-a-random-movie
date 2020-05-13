@@ -43,14 +43,33 @@
                </li>
                {% endfor %}
             </ul>
+            <ul class="list-inline" style="mix-blend-mode: difference;"><strong><li class="list-inline-item">Available on : </li></strong> 
+               {% for platform in my_movie.streaming_platforms %}
+               <li class="list-inline-item">
+                  <span class="border border-dark">{{platform}}</span> 
+               </li>
+               {% endfor %}
+            </ul>
       
             <p style="mix-blend-mode: difference; max-width: 1200px;"><strong>Synopsis: {{my_movie.plot}}<strong></p>
+
+               <div class="float-sm-left" style="margin:10px ; margin-bottom: 20px;">
+               
+                  <button onclick="myFunction()" class="btn btn-dark">click to get a random movie</button>
+               
+               </div>
+
+              
+            <script type="text/javascript">
+               function myFunction() {
+                   location.reload();
+               }
+               </script>
+
+               <div> 
+                  <a href="{{my_movie.free_url}}" style="margin-top: 15px; padding: 15px;text-decoration: underline;mix-blend-mode: difference; ">Free download link</a>
             
-               <div class="float-sm-left">
-               <form action="" method="GET" class="main_form">
-               <button type="submit" class="btn btn-dark">click to get a random movie</button>
-            </form>
-            </div>
+               </div>
          
          </div>
          
