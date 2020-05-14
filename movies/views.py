@@ -33,8 +33,8 @@ def movie_detail(request):
         url.append("Couldn't find a streaming service")
     if len(url) == 0:
          url.append("Couldn't find a streaming service")
-    else:
-        my_movie['streaming_platforms']=set(url)
+    
+    my_movie['streaming_platforms']=set(url)
     year=my_movie['year']
     tags=(my_movie['title'].lower().split(' '))
     slug=""
@@ -42,7 +42,8 @@ def movie_detail(request):
         if tag != ':':
             slug+=tag+'-'
 
-    my_movie['free_url']="https://ww5.fmovie.sc/online/"+slug+str(year)
+    my_movie['free_url1']="https://ww5.fmovie.sc/online/"+slug+str(year)
+    my_movie['free_url2']="https://yst.mx/movie/"+slug+str(year)
     movie=moviesdb.get_movie(my_movie.movieID)
     my_movie.genre=movie['genre']
     plot=movie['plot'][0].split('::')
