@@ -53,18 +53,20 @@
       
             <p style="mix-blend-mode: difference; max-width: 1200px;"><strong>Synopsis: {{my_movie.plot}}<strong></p>
 
-               <div class="float-sm-left" style="margin:10px ; margin-bottom: 20px; margin-right: 10px;">
                
-                  <button onclick="myFunction()" class="btn btn-dark">click to get a random movie</button>
+               <ul class="list-group" >
+                  <li><div class="float-sm-left" style="margin:10px ; margin-bottom: 20px; margin-right: 10px;">
                
-               </div>
-               <ul class="list-inline" style="mix-blend-mode: difference;">
-                  <li class="list-inline-item">
-                     <a href="{{my_movie.free_url1}}" class="float-sm-left" style="text-decoration: underline;mix-blend-mode: difference;padding: 15px;">Free streaming link 1</a>
+                     <button onclick="myFunction()" class="btn btn-dark">click to get a random movie</button>
+                  
+                  </div>
+               </li>
+ 
+                     <a href="{{my_movie.free_url1}}"  style="text-decoration: underline;mix-blend-mode: difference;padding: 15px;">Free streaming link 1</a>
                   </li>
                   
                   <li class="list-inline-item">
-                     <a href="{{my_movie.free_url2}}" class="float-sm-left" style="text-decoration: underline;mix-blend-mode: difference;padding: 14px; ">Free streaming link 2</a>
+                     <a href="{{my_movie.free_url2}}" style="text-decoration: underline;mix-blend-mode: difference;padding: 14px; ">Free streaming link 2</a>
                         
                   </li>
                   
