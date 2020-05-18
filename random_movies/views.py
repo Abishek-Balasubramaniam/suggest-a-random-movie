@@ -15,6 +15,7 @@ def movie_detail(request):
     list = results['items']
     url=[]
     try:
+
         for item in list[0]['offers']:
             path=item['urls']['standard_web'].split('.')
             if "netflix" in path[1]:
@@ -33,9 +34,12 @@ def movie_detail(request):
                 url.append('Rent from play-store')
     except KeyError:
         url.append("Couldn't find a streaming service")
+    
+    except IndexError:
+        return redirect('random_movies:random_movie')
+    
     if len(url) == 0:
          url.append("Couldn't find a streaming service")
-    
     my_movie['streaming_platforms']=set(url)
     if "Amazon prime video" in url and "Netflix" in url:
         aapp="Netflix and Amazon prime video"
