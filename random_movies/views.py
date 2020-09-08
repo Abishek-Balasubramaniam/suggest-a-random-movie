@@ -12,7 +12,7 @@ def movie_detail(request):
     #id_list=[id for id in top[i].getID for i in range(0,250)]
     my_movie=random.choice(top)
     #results = just_watch.search_for_item(query=my_movie['title'])
-    list = results['items']
+    #list = results['items']
     url=[]
     """try:
 
