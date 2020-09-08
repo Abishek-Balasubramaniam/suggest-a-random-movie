@@ -20,7 +20,6 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=2500)),
                 ('url', models.CharField(max_length=2500)),
-                ('avail_on', models.CharField(max_length=2500)),
                 ('author', models.ForeignKey(default=None, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
