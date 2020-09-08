@@ -54,7 +54,7 @@ def movie_detail(request):
     elif "Apple itunes" in url:
         aapp="Apple itunes"
     elif "Couldn't find a streaming service" in url:
-        aapp="Couldn't find a streaming service""""
+        aapp="Couldn't find a streaming service"""
     year=my_movie['year']
     tags=(my_movie['title'].lower().split(' '))
     slug=""
