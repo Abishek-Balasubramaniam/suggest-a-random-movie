@@ -8,13 +8,13 @@ import random
 def movie_detail(request):
     moviesdb=imdb.IMDb()
     top=moviesdb.get_top250_movies()
-    just_watch = JustWatch(country='IN')
+    #just_watch = JustWatch(country='IN')
     #id_list=[id for id in top[i].getID for i in range(0,250)]
     my_movie=random.choice(top)
-    results = just_watch.search_for_item(query=my_movie['title'])
+    #results = just_watch.search_for_item(query=my_movie['title'])
     list = results['items']
     url=[]
-    try:
+    """try:
 
         for item in list[0]['offers']:
             path=item['urls']['standard_web'].split('.')
@@ -54,7 +54,7 @@ def movie_detail(request):
     elif "Apple itunes" in url:
         aapp="Apple itunes"
     elif "Couldn't find a streaming service" in url:
-        aapp="Couldn't find a streaming service"
+        aapp="Couldn't find a streaming service""""
     year=my_movie['year']
     tags=(my_movie['title'].lower().split(' '))
     slug=""
@@ -73,7 +73,7 @@ def movie_detail(request):
     my_movie.directors=movie['directors']
     request.session['url']=movie['full-size cover url']
     request.session['title']=my_movie['title']
-    request.session['avail_on']=aapp
+    #request.session['avail_on']=aapp
     return render(request,'movie_details.html',{'my_movie':my_movie})
     #return HttpResponse(my_movie.genre)
   
@@ -85,8 +85,8 @@ def marked(request):
 def mark(request):
     mtitle=request.session['title']
     murl=request.session['url']
-    mavail_on=request.session['avail_on']
-    Movie.objects.create(title=mtitle,url=murl,avail_on=mavail_on,author=request.user)
+    #mavail_on=request.session['avail_on']
+    Movie.objects.create(title=mtitle,url=murl,author=request.user)
     return redirect('random_movies:random_movie')
 
 def remove(request,movie_title):
