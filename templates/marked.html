@@ -44,7 +44,7 @@
             <img src="{{movie.url}}" class="card-img-top rounded img-fluid" alt="...">
             <div class="card-body justify-content-center">
               <p class="card-text"><strong>{{movie.title}}</strong></p>
-              <p class="card-text">Available on : {{movie.avail_on}}</p>
+              <!--<p class="card-text">Available on : {{movie.avail_on}}</p>-->
               <a class="btn btn-dark" href="{% url 'random_movies:remove_marked' movie_title=movie.title %}">Remove</a>
             
             </div>
